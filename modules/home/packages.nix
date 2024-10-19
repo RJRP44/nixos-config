@@ -59,9 +59,17 @@ in
     sl
     tty-clock                         # cli clock
 
+    ## LATEX
+    texliveFull
+    texstudio
+
     ## GUI Apps
+    anki
     audacity
     bleachbit                         # cache cleaner
+    beeper
+    inkscape
+    jetbrains.clion
     gimp
     libreoffice
     nix-prefetch-github
@@ -78,10 +86,14 @@ in
     gcc
     gdb
     gnumake
+    platformio-core
 
     # Python
     python3
     python312Packages.ipython
+
+    # FS
+    lxqt.lxqt-policykit
 
     inputs.alejandra.defaultPackage.${system}
   ]);

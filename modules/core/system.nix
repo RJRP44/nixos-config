@@ -22,6 +22,7 @@
 
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
+  console.keyMap = "fr";
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
 }

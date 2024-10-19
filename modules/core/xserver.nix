@@ -3,7 +3,8 @@
   services = {
     xserver = {
       enable = true;
-      xkb.layout = "us,fr";
+      xkb.layout = "fr";
+      videoDrivers = ["nvidia"];
     };
 
     displayManager.autoLogin = {
@@ -16,7 +17,9 @@
       #   accelProfile = "flat";
       # };
     };
+
   };
+
   # To prevent getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 }
