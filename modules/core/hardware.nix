@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
-{  
+{ config, pkgs, nixpkgs, ... }:
+{ 
+
   hardware = {
     opengl.enable = true;
     
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.production; 
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;

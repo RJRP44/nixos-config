@@ -70,11 +70,13 @@ in
     beeper
     inkscape
     jetbrains.clion
+    kicad
     gimp
     libreoffice
     nix-prefetch-github
     pavucontrol                       # pulseaudio volume controle (GUI)
     qalculate-gtk                     # calculator
+    saleae-logic-2
     soundwireserver                   # pass audio to android phone
     thunderbird
     vlc
