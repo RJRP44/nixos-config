@@ -20,8 +20,8 @@
         "lxqt-policykit-agent"
 
         ## App auto start
-        "[workspace 1 silent] floorp"
-        "[workspace 2 silent] kitty"
+        # "[workspace 1 silent] floorp"
+        # "[workspace 2 silent] kitty"
       ];
 
       input = {
@@ -40,8 +40,8 @@
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
-        gaps_in = 10;
-        gaps_out = 20;
+        gaps_in = 5;
+        gaps_out = 10;
         border_size = 2;
         "col.active_border" = "rgb(98971a) rgb(cc241d) 45deg";
         "col.inactive_border" = "0x00000000";
@@ -101,7 +101,7 @@
 
         shadow_ignore_window = true;
         shadow_offset = "0 2";
-        shadow_range = 20;
+        shadow_range = 10;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000055)";
       };
@@ -179,8 +179,8 @@
         "$mainMod, quotedbl, workspace, 3"
         "$mainMod, apostrophe, workspace, 4"
         "$mainMod, parenleft, workspace, 5"
-        "$mainMod, egrave, workspace, 6"
-        "$mainMod, minus, workspace, 7"
+        "$mainMod, minus, workspace, 6"
+        "$mainMod, egrave, workspace, 7"
         "$mainMod, underscore, workspace, 8"
         "$mainMod, ccedilla, workspace, 9"
         "$mainMod, agrave, workspace, 10"
@@ -191,8 +191,8 @@
         "$mainMod SHIFT, quotedbl, movetoworkspacesilent, 3"
         "$mainMod SHIFT, apostrophe, movetoworkspacesilent, 4"
         "$mainMod SHIFT, parenleft, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, egrave, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, minus, movetoworkspacesilent, 7"
+        "$mainMod SHIFT, minus, movetoworkspacesilent, 6"
+        "$mainMod SHIFT, egrave, movetoworkspacesilent, 7"
         "$mainMod SHIFT, underscore, movetoworkspacesilent, 8"
         "$mainMod SHIFT, ccedilla, movetoworkspacesilent, 9"
         "$mainMod SHIFT, agrave, movetoworkspacesilent, 10"
@@ -286,6 +286,10 @@
         "opacity 1.0 override 1.0 override, class:(Unity)"
         "opacity 1.0 override 1.0 override, class:(floorp)"
         "opacity 1.0 override 1.0 override, class:(evince)"
+        "opacity 1.0 override 1.0 override, class:(clion)"
+        "opacity 1.0 override 1.0 override, class:(texstudio)"
+        "opacity 1.0 override 1.0 override, class:(beeper)"
+        "opacity 1.0 override 1.0 override, class:(spotify)"
         "workspace 1, class:^(floorp)$"
         "workspace 3, class:^(evince)$"
         "workspace 4, class:^(discord)$"

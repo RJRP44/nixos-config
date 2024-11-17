@@ -29,7 +29,7 @@ in
       monitor = 
       text = cmd[update:1000] echo "$(date +"%k:%M")"
       color = rgba(235, 219, 178, .9)
-      font_size = 111
+      font_size = 70
       font_family = JetBrainsMono NF Bold
       position = 0, 270
       halign = center
@@ -41,7 +41,7 @@ in
       monitor =
       text = cmd[update:1000] echo "- $(date +"%A, %B %d") -"
       color = rgba(235, 219, 178, .9)
-      font_size = 20
+      font_size = 14
       font_family = CaskaydiaCove Nerd Font
       position = 0, 160
       halign = center
@@ -67,7 +67,7 @@ in
     # USER
     label {
       monitor =
-      text =   $USER
+      text = Привет, $USER 👋
       color = rgba(235, 219, 178, .9)
       font_size = 16
       font_family = CaskaydiaCove Nerd Font

@@ -51,6 +51,8 @@ in
     yt-dlp-light
     xdg-utils
     xxd
+    libusb1
+    hidapi
 
     ## CLI 
     cbonsai                           # terminal screensaver
@@ -70,16 +72,18 @@ in
     beeper
     inkscape
     jetbrains.clion
+#    kicad
     gimp
     libreoffice
     nix-prefetch-github
     pavucontrol                       # pulseaudio volume controle (GUI)
     qalculate-gtk                     # calculator
+    saleae-logic-2
     soundwireserver                   # pass audio to android phone
     thunderbird
     vlc
-    winetricks
-    wineWowPackages.wayland
+#   winetricks
+#    wineWowPackages.wayland
     zenity
 
     # C / C++

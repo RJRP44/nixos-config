@@ -24,4 +24,9 @@
     shell = pkgs.zsh;
   };
   nix.settings.allowed-users = [ "${username}" ];
+
+  users.extraGroups.plugdev = { };
+  users.extraUsers.${username}.extraGroups = [ "plugdev" "dialout" ];
+
+  services.udev.packages = [ pkgs.openocd ];
 }

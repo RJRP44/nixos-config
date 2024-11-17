@@ -1,7 +1,7 @@
 { ... }:
 let custom = {
   font = "JetBrainsMono Nerd Font";
-  font_size = "18px";
+  font_size = "14px";
   font_weight = "bold";
   text_color = "#FBF1C7";
   background_0 = "#1D2021";
@@ -116,7 +116,7 @@ in
     }
 
     #custom-launcher {
-      font-size: 20px;
+      font-size: 16px;
       color: ${text_color};
       font-weight: bold;
       margin-left: 15px;

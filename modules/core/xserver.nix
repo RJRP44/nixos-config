@@ -4,7 +4,7 @@
     xserver = {
       enable = true;
       xkb.layout = "fr";
-      videoDrivers = ["nvidia"];
+   #   videoDrivers = ["nvidia"];
     };
 
     displayManager.autoLogin = {
