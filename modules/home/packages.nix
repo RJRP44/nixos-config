@@ -68,7 +68,6 @@ in
     ## GUI Apps
     anki
     audacity
-    bleachbit                         # cache cleaner
     beeper
     inkscape
     jetbrains.clion
