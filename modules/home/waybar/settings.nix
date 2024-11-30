@@ -14,6 +14,7 @@ let custom = {
   magenta = "#B16286";
   cyant = "#689D6A";
   orange = "#D65D0E";
+  pink = "#D741A7";
   opacity = "1";
   indicator_height = "2px";
 };
@@ -36,14 +37,23 @@ in
         "clock"
     ];
     modules-right= [
+        "hyprland/language"
         "cpu"
         "memory"
-        (if (host == "desktop") then "disk" else "")
+        (if (host == "desktop") then "disk" else "disk")
         "pulseaudio" 
         "network"
         "battery"
         "custom/notification"
     ];
+    "hyprland/language"= {
+      format= "<span foreground='${pink}'> </span> {}";
+      interval= 2;
+      format-ru= "🇷🇺 ru";
+      format-fr= "🇫🇷 fr";
+      on-click= "hyprctl switchxkblayout current next";
+      keyboard-name= "at-translated-set-2-keyboard";
+    };
     clock= {
         calendar = {
           format = { today = "<span color='#98971A'><b>{}</b></span>"; };
@@ -68,6 +78,7 @@ in
             "7"= "VII";
             "8"= "VII";
             "9"= "IX";
+            "0"= "X";
             sort-by-number= true;
         };
         persistent-workspaces = {

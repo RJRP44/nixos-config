@@ -14,6 +14,7 @@ let custom = {
   magenta = "#B16286";
   cyant = "#689D6A";
   orange = "#D65D0E";
+  pink = "#D741A7";
   opacity = "1";
   indicator_height = "2px";
 };
@@ -80,11 +81,15 @@ in
       padding: 1px;
     }
 
-    #pulseaudio, #network, #cpu, #memory, #disk, #battery, #custom-notification {
+    #pulseaudio, #network, #cpu, #memory, #disk, #battery, #custom-notification, #language {
       padding-left: 5px;
       padding-right: 5px;
       margin-right: 10px;
       color: ${text_color};
+    }
+
+    #language {
+       border-bottom: ${indicator_height} solid ${pink};
     }
 
     #cpu {

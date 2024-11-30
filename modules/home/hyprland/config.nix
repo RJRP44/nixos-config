@@ -18,6 +18,8 @@
         "wl-paste --watch cliphist store &"
         "hyprlock"
         "lxqt-policykit-agent"
+        "nm-applet --indicator"
+        "blueman-applet"
 
         ## App auto start
         # "[workspace 1 silent] floorp"
@@ -25,7 +27,7 @@
       ];
 
       input = {
-        kb_layout = "fr";
+        kb_layout = "fr,ru";
         kb_options ="grp:alt_caps_toggle"; 
         numlock_by_default = true;
         follow_mouse = 0;
@@ -332,7 +334,8 @@
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
+      monitor=eDP-1, 1366x768, 0x0, 1
+      monitor=HDMI-A-1, 1920x1080, -820x-1080, 1
 
       xwayland {
         force_zero_scaling = true

@@ -82,6 +82,9 @@ in
     soundwireserver                   # pass audio to android phone
     thunderbird
     vlc
+    galaxy-buds-client
+    networkmanagerapplet
+    blueman
 #   winetricks
 #    wineWowPackages.wayland
     zenity
