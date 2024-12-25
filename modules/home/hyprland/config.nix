@@ -20,6 +20,7 @@
         "lxqt-policykit-agent"
         "nm-applet --indicator"
         "blueman-applet"
+        "logid -c .config/logid.cfg"
 
         ## App auto start
         # "[workspace 1 silent] floorp"
@@ -199,6 +200,9 @@
         "$mainMod SHIFT, ccedilla, movetoworkspacesilent, 9"
         "$mainMod SHIFT, agrave, movetoworkspacesilent, 10"
         "$mainMod CTRL, c, movetoworkspace, empty"
+
+        # switch workspace screen
+        "$mainMod CTRL, v, swapactiveworkspaces"
 
         # window control
         "$mainMod SHIFT, left, movewindow, l"

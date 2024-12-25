@@ -6,6 +6,9 @@ in
   home.packages = (with pkgs; [
     _2048
 
+    pomodoro-gtk
+    logiops
+
     ## CLI utility
     ani-cli
     binsider

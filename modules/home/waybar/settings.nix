@@ -49,8 +49,8 @@ in
     "hyprland/language"= {
       format= "<span foreground='${pink}'> </span> {}";
       interval= 2;
-      format-ru= "🇷🇺 ru";
-      format-fr= "🇫🇷 fr";
+      format-ru= "🇷🇺 рус";
+      format-fr= "🇫🇷 fra";
       on-click= "hyprctl switchxkblayout current next";
       keyboard-name= "at-translated-set-2-keyboard";
     };
@@ -76,9 +76,9 @@ in
             "5"= "V";
             "6"= "VI";
             "7"= "VII";
-            "8"= "VII";
+            "8"= "VIII";
             "9"= "IX";
-            "0"= "X";
+            "10"= "X";
             sort-by-number= true;
         };
         persistent-workspaces = {
