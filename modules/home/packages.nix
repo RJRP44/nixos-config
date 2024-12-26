@@ -1,14 +1,21 @@
-{ inputs, pkgs, ... }: 
+{ lib, inputs, pkgs, ... }: 
 let 
-  _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {}; 
+  _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {};
+  envVarsWrapper = import ./env-wrapper.nix { inherit lib pkgs; };
+
 in
 {
   home.packages = (with pkgs; [
+
+    (envVarsWrapper.wrap kicad {
+      GDK_BACKEND = "x11";
+    })
+
     _2048
 
     pomodoro-gtk
-    logiops
-
+    prusa-slicer
+ 
     ## CLI utility
     ani-cli
     binsider
