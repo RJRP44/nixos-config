@@ -20,7 +20,6 @@
         "lxqt-policykit-agent"
         "nm-applet --indicator"
         "blueman-applet"
-        "logid -c .config/logid.cfg"
 
         ## App auto start
         # "[workspace 1 silent] floorp"
@@ -142,9 +141,7 @@
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, kitty"
-        "ALT, Return, exec, kitty --title float_kitty"
-        "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
+        "$mainMod, Return, exec, alacritty"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] floorp'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
@@ -165,6 +162,7 @@
         "$mainMod, W,exec, wallpaper-picker"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
+        "$mainMod SHIFT, V, togglefloating"
 
         # screenshot
         "$mainMod, Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
@@ -338,8 +336,8 @@
     };
 
     extraConfig = "
-      monitor=eDP-1, 1366x768, 0x0, 1
-      monitor=HDMI-A-1, 1920x1080, -820x-1080, 1
+    monitor=DP-1,2560x1440@99.90Hz,1920x0,1.25
+    monitor=DVI-D-1,1920x1080@60.00Hz,0x0,1
 
       xwayland {
         force_zero_scaling = true

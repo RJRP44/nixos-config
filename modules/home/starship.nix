@@ -2,6 +2,7 @@
 {
   programs.starship = {
     enable = false;
+    enableFishIntegration = true;
 
     enableBashIntegration = true;
     enableZshIntegration = true;

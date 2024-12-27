@@ -1,6 +1,7 @@
 {inputs, username, host, ...}: {
   imports = [
-    ./aseprite/aseprite.nix           # pixel art editor
+#    ./aseprite/aseprite.nix           # pixel art editor
+    ./alacritty.nix                   # terminal
     ./audacious.nix                   # music player
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor 
@@ -14,7 +15,6 @@
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
     ./hyprland                        # window manager
-    ./kitty.nix                       # terminal
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync/swaync.nix               # notification deamon
     ./micro.nix                       # nano replacement

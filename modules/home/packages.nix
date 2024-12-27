@@ -12,9 +12,16 @@ in
     })
 
     _2048
-
+    android-studio
+    jetbrains.webstorm
     pomodoro-gtk
     prusa-slicer
+    alacritty
+
+    nodejs
+    typescript
+    postman
+    jetbrains.datagrip
  
     ## CLI utility
     ani-cli
