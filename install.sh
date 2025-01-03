@@ -107,7 +107,6 @@ install() {
     # Get the hardware configuration
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
-    cp logid.cfg ~/.config/logid.cfg
     sleep 0.2
 
     # Last Confirmation

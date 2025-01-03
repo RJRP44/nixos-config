@@ -1,6 +1,7 @@
 { lib, inputs, pkgs, ... }: 
 let 
   _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {};
+  esp-idf = pkgs.callPackage ../../pkgs/esp-idf/default.nix {};
   envVarsWrapper = import ./env-wrapper.nix { inherit lib pkgs; };
 
 in
@@ -11,12 +12,18 @@ in
       GDK_BACKEND = "x11";
     })
 
+    prusa-slicer
+    esp-idf
+
     _2048
     android-studio
     jetbrains.webstorm
     pomodoro-gtk
-    prusa-slicer
     alacritty
+
+    go
+    jetbrains.goland
+    jetbrains.dataspell
 
     nodejs
     typescript

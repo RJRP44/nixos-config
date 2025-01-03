@@ -1,4 +1,4 @@
-{ ... }: 
+{pkgs, ... }: 
 {
   services = {
     gvfs.enable = true;
@@ -19,4 +19,10 @@
       PASSPHRASE = "";
     };
   };
+
+  services.mysql.enable = true;
+  services.mysql.package = pkgs.mariadb;
+
+  services.udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0925", ATTR{idProduct}=="3881", MODE="0666"'';
 }
+

@@ -6,5 +6,5 @@
      withVencord = true; 
     })
   ];
-  xdg.configFile."Vencord/themes/gruvbox.theme.css".source = ./gruvbox.css;
+  #xdg.configFile."Vencord/themes/gruvbox.theme.css".source = ./gruvbox.css;
 }
