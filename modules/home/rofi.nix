@@ -18,38 +18,41 @@
 
   xdg.configFile."rofi/config.rasi".text = ''
     configuration{
-      modi: "run,drun,window";
+      modi: "drun";
       lines: 5;
       cycle: false;
       font: "JetBrainsMono NF Bold 15";
       show-icons: true;
       icon-theme: "Papirus-dark";
-      terminal: "kitty";
+      terminal: "alacritty";
       drun-display-format: "{icon} {name}";
       location: 0;
       disable-history: true;
       hide-scrollbar: true;
-      display-drun: " Apps ";
-      display-run: " Run ";
-      display-window: " Window ";
-      /* display-Network: " Network"; */
+      display-drun: "  ";
+      display-Network: " Network";
       sidebar-mode: true;
       sorting-method: "fzf";
     }
 
     @theme "theme"
 
-    element-text, element-icon , mode-switcher {
+    element-text, element-icon {
       background-color: inherit;
       text-color:       inherit;
     }
 
     window {
-      height: 480px;
+      height: 400px;
       width: 400px;
       border: 3px;
       border-color: @border-col;
       background-color: @bg-col;
+       border-radius:  24px;
+    }
+
+    mode-switcher {
+        enabled: false;
     }
 
     mainbox {
@@ -64,15 +67,14 @@
     }
 
     prompt {
-      background-color: @green;
+      background-color: @bg-col-light;
       padding: 4px;
-      text-color: @bg-col-light;
-      border-radius: 3px;
+      text-color: @green;
       margin: 10px 0px 10px 10px;
     }
 
     textbox-prompt-colon {
-      expand: false;
+      expand: true;
       str: ":";
     }
 
@@ -80,8 +82,8 @@
       padding: 6px;
       margin: 10px 10px 10px 5px;
       text-color: @fg-col;
-      background-color: @bg-col;
-      border-radius: 3px;
+      background-color: @bg-col-light;
+      border-radius: 5px;
     }
 
     listview {
@@ -106,24 +108,7 @@
     element selected {
       background-color:  @selected-col ;
       text-color: @fg-col2  ;
-      border-radius: 3px;
-    }
-
-    mode-switcher {
-      spacing: 0;
-    }
-
-    button {
-      padding: 10px;
-      background-color: @bg-col-light;
-      text-color: @grey;
-      vertical-align: 0.5; 
-      horizontal-align: 0.5;
-    }
-
-    button selected {
-      background-color: @bg-col;
-      text-color: @green;
+      border-radius: 10px;
     }
   '';  
 }

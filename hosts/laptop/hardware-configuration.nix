@@ -14,18 +14,24 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3ec3e3fb-2904-4d2e-ba6b-0ecdc39335f1";
+    { device = "/dev/disk/by-uuid/64acd289-166d-4a70-a1cc-b6164e67921a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8428-84AB";
+    { device = "/dev/disk/by-uuid/1E59-4C6E";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/home/romain/Documents" =
+    { device = "/dev/disk/by-uuid/0E23-A4DC";
+      fsType = "exfat";
+      options = [ "umask=0000"];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/1775e5bd-5fe4-42e8-a11d-0eea9ca24402"; }
+    [ { device = "/dev/disk/by-uuid/aa598736-db2f-455b-b1d0-098cdd31f687"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

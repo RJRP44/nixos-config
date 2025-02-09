@@ -1,4 +1,4 @@
-{ lib, inputs, pkgs, ... }: 
+{ lib, inputs, pkgs, ... }:
 let 
   _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {};
   esp-idf = pkgs.callPackage ../../pkgs/esp-idf/default.nix {};
@@ -9,11 +9,23 @@ in
   home.packages = (with pkgs; [
 
     (envVarsWrapper.wrap kicad {
+      GDK_BACKEND="x11";
+      GTK_THEME="Breeze";
+    })
+
+    (envVarsWrapper.wrap notion-app-enhanced {
       GDK_BACKEND = "x11";
     })
 
+
+    fontfinder
+
+    affine
+
     prusa-slicer
     esp-idf
+    firefox
+    owncloud-client
 
     _2048
     android-studio
@@ -25,11 +37,14 @@ in
     jetbrains.goland
     jetbrains.dataspell
 
+    ## MX2S mouse
+    solaar
+
     nodejs
     typescript
     postman
     jetbrains.datagrip
- 
+
     ## CLI utility
     ani-cli
     binsider
@@ -108,8 +123,8 @@ in
     galaxy-buds-client
     networkmanagerapplet
     blueman
-#   winetricks
-#    wineWowPackages.wayland
+    #winetricks
+    #wineWowPackages.wayland
     zenity
 
     # C / C++

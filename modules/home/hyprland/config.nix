@@ -5,9 +5,9 @@
       
       # autostart
       exec-once = [
-        "systemctl --user import-environment &"
-        "hash dbus-update-activation-environment 2>/dev/null &"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
+        # "hash dbus-update-activation-environment 2>/dev/null"
+        "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "nm-applet &"
         "wl-clip-persist --clipboard both"
         "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
@@ -20,6 +20,7 @@
         "lxqt-policykit-agent"
         "nm-applet --indicator"
         "blueman-applet"
+        "logid -c .config/logid.cfg"
 
         ## App auto start
         # "[workspace 1 silent] floorp"
@@ -64,7 +65,6 @@
       };
 
       dwindle = {
-        no_gaps_when_only = false;
         force_split = 0;
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
@@ -76,7 +76,6 @@
       master = {
         new_status = "master";
         special_scale_factor = 1;
-        no_gaps_when_only = false;
       };
 
       decoration = {
@@ -99,13 +98,14 @@
           xray = true;
         };
 
-        drop_shadow = true;
-
-        shadow_ignore_window = true;
-        shadow_offset = "0 2";
-        shadow_range = 10;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000055)";
+        shadow = {
+          enabled = true;
+          range = 10;
+          render_power = 3;
+          ignore_window = true;
+          color = "rgba(00000055)";
+          offset = "0 2";
+        };
       };
 
       animations = {
@@ -253,14 +253,6 @@
 
       # windowrule
       windowrule = [
-        "float,qView"
-        "center,qView"
-        "size 1200 725,qView"
-        "float,imv"
-        "center,imv"
-        "size 1200 725,imv"
-        "float,mpv"
-        "center,mpv"
         "tile,Aseprite"
         "size 1200 725,mpv"
         "float,title:^(float_kitty)$"
@@ -336,8 +328,9 @@
     };
 
     extraConfig = "
-    monitor=DP-1,2560x1440@99.90Hz,1920x0,1.25
-    monitor=DVI-D-1,1920x1080@60.00Hz,0x0,1
+    monitor=eDP-1, 1366x768,0x0, 1
+    monitor=desc:Iiyama North America PL2745Q 12277430A2123, highrr, 0x-1152, 1.25
+    monitor=desc:Iiyama North America PLB2712HDS 1105104000685, 1920x1080@60.00Hz, -554x-1080, 1
 
       xwayland {
         force_zero_scaling = true

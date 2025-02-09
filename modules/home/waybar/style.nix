@@ -103,7 +103,6 @@ in
     }
 
     #pulseaudio {
-      margin-left: 15px;
       border-bottom: ${indicator_height} solid ${blue};
     }
     #network {

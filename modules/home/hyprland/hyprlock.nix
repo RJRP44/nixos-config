@@ -9,7 +9,7 @@ in
     background {
       monitor =
       path = ${../../../wallpapers/otherWallpaper/gruvbox/forest.jpg}
-      blur_passes = 1
+      blur_passes = 2
       contrast = 0.8916
       brightness = 0.8172
       vibrancy = 0.1696
@@ -22,6 +22,8 @@ in
       no_fade_in = false
       grace = 0
       disable_loading_bar = false
+      ignore_empty_input = true
+      fractional_scaling = 0
     }
 
     # Time
@@ -30,6 +32,7 @@ in
       text = cmd[update:1000] echo "$(date +"%k:%M")"
       color = rgba(235, 219, 178, .9)
       font_size = 70
+      shadow_passes = 3
       font_family = JetBrainsMono NF Bold
       position = 0, 270
       halign = center
@@ -43,6 +46,7 @@ in
       color = rgba(235, 219, 178, .9)
       font_size = 14
       font_family = CaskaydiaCove Nerd Font
+      shadow_passes = 3
       position = 0, 160
       halign = center
       valign = center
@@ -80,8 +84,8 @@ in
     input-field {
       monitor =
       size = 350, 50
-      outline_thickness = 0
-      rounding = 15
+      outline_thickness = 1
+      rounding = 10
       dots_size = 0.25 # Scale of input-field height, 0.2 - 0.8
       dots_spacing = 0.4 # Scale of dots' absolute size, 0.0 - 1.0
       dots_center = true

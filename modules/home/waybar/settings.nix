@@ -29,7 +29,7 @@ in
     margin-left= 0;
     margin-right= 0;
     modules-left= [
-        "custom/launcher" 
+        #"custom/launcher" 
         "hyprland/workspaces"
         "tray"
     ];
@@ -40,7 +40,7 @@ in
         "hyprland/language"
         "cpu"
         "memory"
-        (if (host == "desktop") then "disk" else "disk")
+        "disk"
         "pulseaudio" 
         "network"
         "battery"
