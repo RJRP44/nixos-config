@@ -8,11 +8,11 @@
       bg-col-light: #282828;
       border-col: #928374;
       selected-col: #3C3836;
-      green: #98971A;
+      green: #3A86FF;
       fg-col: #FBF1C7;
       fg-col2: #EBDBB2;
       grey: #BDAE93;
-      highlight: @green;
+      highlight: #3A86FF;
     }
   '';
 
@@ -48,7 +48,7 @@
       border: 3px;
       border-color: @border-col;
       background-color: @bg-col;
-       border-radius:  24px;
+       border-radius:  15px;
     }
 
     mode-switcher {
@@ -62,7 +62,6 @@
     inputbar {
       children: [prompt,entry];
       background-color: @bg-col-light;
-      border-radius: 5px;
       padding: 0px;
     }
 

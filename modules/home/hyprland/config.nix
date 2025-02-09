@@ -46,7 +46,7 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(98971a) rgb(cc241d) 45deg";
+        "col.active_border" = "rgb(3A86FF) rgb(FF7F11) 45deg";
         "col.inactive_border" = "0x00000000";
         border_part_of_window = false;
         no_border_on_floating = false;
@@ -79,7 +79,7 @@
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 15;
         # active_opacity = 0.90;
         # inactive_opacity = 0.90;
         # fullscreen_opacity = 1.0;
