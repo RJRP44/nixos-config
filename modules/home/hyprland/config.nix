@@ -1,4 +1,4 @@
-{ ... }: 
+{ pkgs, ... }: 
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -13,8 +13,7 @@
         "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "poweralertd &"
-        "waybar &"
-        "swaync &"
+        "${pkgs.hyprpanel}/bin/hyprpanel &"
         "wl-paste --watch cliphist store &"
         "hyprlock"
         "lxqt-policykit-agent"
@@ -48,7 +47,6 @@
         border_size = 2;
         "col.active_border" = "rgb(3A86FF) rgb(FF7F11) 45deg";
         "col.inactive_border" = "0x00000000";
-        border_part_of_window = false;
         no_border_on_floating = false;
       };
 
@@ -165,8 +163,8 @@
         "$mainMod SHIFT, V, togglefloating"
 
         # screenshot
-        "$mainMod, Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
-        ",Print, exec, grimblast --notify --cursor --freeze copy area"
+        "$mainMod, Print, exec, grimblast --notify --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
+        ",Print, exec, grimblast --notify --freeze copy area"
 
         # switch focus
         "$mainMod, left, movefocus, l"
@@ -230,45 +228,26 @@
         "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;}' | cliphist decode | wl-copy"
       ];
 
-      # # binds active in lockscreen
-      # bindl = [
-      #   # laptop brigthness
-      #   ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-      #   ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-      #   "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
-      #   "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
-      # ];
+      # binds active in lockscreen
+       bindl = [
+         # laptop brigthness
+         ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+         ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+         "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
+         "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
+       ];
 
-      # # binds that repeat when held
-      # binde = [
-      #   ",XF86AudioRaiseVolume,exec, pamixer -i 2"
-      #   ",XF86AudioLowerVolume,exec, pamixer -d 2"
-      # ];
+      # binds that repeat when held
+      binde = [
+        ",XF86AudioRaiseVolume,exec, pamixer -i 2"
+        ",XF86AudioLowerVolume,exec, pamixer -d 2"
+        ",XF86AudioMute,exec, --no-startup-id pamixer -t"
+      ];
 
       # mouse binding
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
-      ];
-
-      # windowrule
-      windowrule = [
-        "tile,Aseprite"
-        "size 1200 725,mpv"
-        "float,title:^(float_kitty)$"
-        "center,title:^(float_kitty)$"
-        "size 950 600,title:^(float_kitty)$"
-        "float,audacious"
-        "pin,rofi"
-        "tile, neovide"
-        "idleinhibit focus,mpv"
-        "float,udiskie"
-        "float,title:^(Transmission)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
       ];
 
       # windowrulev2
@@ -286,6 +265,7 @@
         "opacity 1.0 override 1.0 override, class:(texstudio)"
         "opacity 1.0 override 1.0 override, class:(beeper)"
         "opacity 1.0 override 1.0 override, class:(spotify)"
+        "opacity 1.0 override 1.0 override, class:(kicad)"
         "workspace 1, class:^(floorp)$"
         "workspace 3, class:^(evince)$"
         "workspace 4, class:^(discord)$"
@@ -329,7 +309,7 @@
 
     extraConfig = "
     monitor=eDP-1, 1366x768,0x0, 1
-    monitor=desc:Iiyama North America PL2745Q 12277430A2123, highrr, 0x-1152, 1.25
+    monitor=desc:Iiyama North America PL2745Q 12277430A2123, highrr, 0x-1440, 1
     monitor=desc:Iiyama North America PLB2712HDS 1105104000685, 1920x1080@60.00Hz, -554x-1080, 1
 
       xwayland {

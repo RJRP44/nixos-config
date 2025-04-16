@@ -8,23 +8,39 @@ in
 {
   home.packages = (with pkgs; [
 
-    (envVarsWrapper.wrap kicad {
-      GDK_BACKEND="x11";
-      GTK_THEME="Breeze";
-    })
+    hyprpanel
 
-    (envVarsWrapper.wrap notion-app-enhanced {
-      GDK_BACKEND = "x11";
-    })
+    #(envVarsWrapper.wrap kicad {
+      #GDK_BACKEND="x11";
+      #KICAD_USE_EGL=ON;
+    #  GTK_THEME="Breeze";
+    #})
 
+    kicad
+
+    keepass
+
+    notion-app-enhanced
+
+    #wxGTK32
+    openocd
+
+    nfs-utils
+
+
+    freecad-wayland
 
     fontfinder
 
     affine
 
     prusa-slicer
-    esp-idf
-    firefox
+
+    spotify
+    
+   
+    #esp-idf
+    #firefox-esr
     owncloud-client
 
     _2048
@@ -33,9 +49,14 @@ in
     pomodoro-gtk
     alacritty
 
+    vscode
+
     go
     jetbrains.goland
     jetbrains.dataspell
+    jetbrains.pycharm-professional
+    jetbrains.idea-community-bin
+
 
     ## MX2S mouse
     solaar
@@ -123,8 +144,8 @@ in
     galaxy-buds-client
     networkmanagerapplet
     blueman
-    #winetricks
-    #wineWowPackages.wayland
+    winetricks
+    wineWow64Packages.waylandFull
     zenity
 
     # C / C++
@@ -136,7 +157,10 @@ in
     # Python
     python3
     python312Packages.ipython
-
+	 
+	 # Java
+	 jdk17
+	 
     # FS
     lxqt.lxqt-policykit
 

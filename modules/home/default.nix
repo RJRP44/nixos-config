@@ -15,8 +15,8 @@
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
     ./hyprland                        # window manager
-    ./swayosd.nix                     # brightness / volume wiget
-    ./swaync/swaync.nix               # notification deamon
+    #./swayosd.nix                     # brightness / volume wiget
+    #./swaync/swaync.nix               # notification deamon
     ./micro.nix                       # nano replacement
     ./nvim.nix                        # neovim editor
     ./p10k/p10k.nix
@@ -24,10 +24,10 @@
     #./retroarch.nix  
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
-    ./spicetify.nix                   # spotify client
+    #./spicetify.nix                   # spotify client
     ./starship.nix                    # shell prompt
     ./swaylock.nix                    # lock screen
-    ./vscodium.nix                    # vscode forck
+    #./vscodium.nix                    # vscode forck
     ./waybar                          # status bar
     ./xdg-mimes.nix                   # xdg config
     ./zsh                             # shell

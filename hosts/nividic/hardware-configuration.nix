@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "vmd" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "vmd" "nvme" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -24,11 +24,10 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/home/romain/Documents" =
-    { device = "/dev/disk/by-uuid/0E23-A4DC";
-      fsType = "exfat";
-      options = [ "umask=0000"];
-    };
+  #fileSystems."/home/romain/Documents" =
+  #  { device = "/dev/disk/by-uuid/0E23-A4DC";
+  #    fsType = "exfat";
+  #  };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/aa598736-db2f-455b-b1d0-098cdd31f687"; }
