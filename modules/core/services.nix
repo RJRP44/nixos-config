@@ -15,7 +15,7 @@
   fileSystems."/home/romain/Ar-Men-Vault" = {
         device = "10.8.0.1:/vault";
         fsType = "nfs";
-        options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=60" "x-systemd.device-timeout=5s" "x-systemd.mount-timeouàt=10s"];
+        options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=60" "x-systemd.device-timeout=5s" "x-systemd.mount-timeout=10s"];
       };
 
   fileSystems."/home/romain/Ar-Men-Backup" = {
@@ -47,16 +47,7 @@
     dbus.enable = true;
     fstrim.enable = true;
     printing.enable = true;
-    printing.drivers = [ pkgs.hplip ];
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
-          user = "romain";
-        };
-      };
-    };
+    printing.drivers = [ pkgs.hplipWithPlugin ];
   };
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed

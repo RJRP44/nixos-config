@@ -7,6 +7,10 @@
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
+      gfxmodeEfi = "1600x1200";
+      gfxmodeBios = "1600x1200";
+      fontSize = 25;
+      theme = pkgs.catppuccin-grub;
     };
     efi = {
       canTouchEfiVariables = true;

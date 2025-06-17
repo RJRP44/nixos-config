@@ -308,12 +308,12 @@
     };
 
     extraConfig = "
-    monitor=eDP-1, 1366x768,0x0, 1
+    monitor=eDP-1, 2880x1920@120.00Hz,0x0, 2
     monitor=desc:Iiyama North America PL2745Q 12277430A2123, highrr, 0x-1440, 1
     monitor=desc:Iiyama North America PLB2712HDS 1105104000685, 1920x1080@60.00Hz, -554x-1080, 1
 
       xwayland {
-        force_zero_scaling = true
+        force_zero_scaling = false
       }
     ";
   };

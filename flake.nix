@@ -34,6 +34,8 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = { nixpkgs, self, ...} @ inputs:
@@ -66,23 +68,11 @@
         nixpkgs.overlays = [
           inputs.hyprpanel.overlay
         ];
-        } 
+        }
+
+        inputs.nixos-hardware.nixosModules.framework-13-7040-amd
         ];
         specialArgs = { host="nividic"; inherit self inputs username ; };
-      };
-       vm = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ ./hosts/vm 
-        {
-        nixpkgs.overlays = [
-          inputs.hyprpanel.overlay
-        ];
-        } 
-        ];
-        specialArgs = { host="vm"; inherit self inputs username ; };
-        overlays = [
-        inputs.hyprpanel.overlay
-      ];
       };
     };
   };
